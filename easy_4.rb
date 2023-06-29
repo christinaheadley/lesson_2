@@ -77,22 +77,80 @@ require 'pry'
 # Assume this rule is good for any year greater than year 0. Write a method that takes any year greater than 0 as input, and returns true if the year is a leap year, or false if it is not a leap year.
 # I: Integer O: bool
 
-def leap_year?(year)
-  return true if year % 400 == 0
-  return true if year % 4 == 0 && year % 100 != 0
-  false
-end
+# def leap_year?(year)
+#   return true if year % 400 == 0
+#   return true if year % 4 == 0 && year % 100 != 0
+#   false
+# end
 
-p leap_year?(2016) == true
-p leap_year?(2015) == false
-p leap_year?(2100) == false
-p leap_year?(2400) == true
-p leap_year?(240000) == true
-p leap_year?(240001) == false
-p leap_year?(2000) == true
-p leap_year?(1900) == false
-p leap_year?(1752) == true
-p leap_year?(1700) == false
-p leap_year?(1) == false
-p leap_year?(100) == false
-p leap_year?(400) == true
+# p leap_year?(2016) == true
+# p leap_year?(2015) == false
+# p leap_year?(2100) == false
+# p leap_year?(2400) == true
+# p leap_year?(240000) == true
+# p leap_year?(240001) == false
+# p leap_year?(2000) == true
+# p leap_year?(1900) == false
+# p leap_year?(1752) == true
+# p leap_year?(1700) == false
+# p leap_year?(1) == false
+# p leap_year?(100) == false
+# p leap_year?(400) == true
+
+# def leap_year?(year)
+#   if year < 1752
+#     return true if year % 4 == 0
+#   else
+#     return true if year % 400 == 0
+#     return true if year % 4 == 0 && year % 100 != 0
+#   end
+#   false
+# end
+
+# THEIRS:
+# def leap_year?(year)
+#   if year < 1752 && year % 4 == 0
+#     true
+#   elsif year % 400 == 0
+#     true
+#   elsif year % 100 == 0
+#     false
+#   else
+#     year % 4 == 0
+#   end
+# end
+
+# p leap_year?(2016) == true
+# p leap_year?(2015) == false
+# p leap_year?(2100) == false
+# p leap_year?(2400) == true
+# p leap_year?(240000) == true
+# p leap_year?(240001) == false
+# p leap_year?(2000) == true
+# p leap_year?(1900) == false
+# p leap_year?(1752) == true
+# p leap_year?(1700) == true
+# p leap_year?(1) == false
+# p leap_year?(100) == true
+# p leap_year?(400) == true
+
+# Multiples of 3 and 5
+# Write a method that searches for all multiples of 3 or 5 that lie between 1 and some other number, and then computes the sum of those multiples. For instance, if the supplied number is 20, the result should be 98 (3 + 5 + 6 + 9 + 10 + 12 + 15 + 18 + 20).
+
+# You may assume that the number passed in is an integer greater than 1.
+
+# def multisum(int)
+#   ((1..int).select { |i| (i % 3 == 0) || (i % 5 == 0) }).sum
+# end
+
+# # p multisum(15)
+# p multisum(3) == 3
+# p multisum(5) == 8
+# p multisum(10) == 33
+# p multisum(1000) == 234168
+
+
+Running Totals
+Write a method that takes an Array of numbers, and returns an Array with the same number of elements, and each element has the running total from the original Array.
+
+
